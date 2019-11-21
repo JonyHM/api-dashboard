@@ -1,0 +1,31 @@
+{
+  "name": "api-dashboard",
+  "version": "1.0.0",
+  "description": "API para dashboard LATECOÈRE",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonyHM/api-dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonyHM/api-dashboard/issues"
+  },
+  "homepage": "https://github.com/JonyHM/api-dashboard#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parser": "^2.3.2",
+    "csv-writer": "^1.5.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "make": "^0.8.1"
+  },
+  "devDependencies": {
+    "sqlite3": "^4.1.0"
+  }
+}
