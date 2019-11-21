@@ -3,11 +3,12 @@
 const sqlite3 = require('sqlite3').verbose();
 const csv = require('csv-parser')
 const fs = require('fs');
+var path = require("path");
 
-const inputfile = '../../assets/datas_14nov - saida.csv'; /* precisa ser utf-8 sem BOM */
+const inputfile = path.resolve(path.join(__dirname, '../../assets/datas_14nov - saida.csv'));
 
 // cria o BD e abre a conexão com ele, e após, dispara a função callback
-const bd = new sqlite3.Database('../db/bdparceria.db', (error) => {
+const bd = new sqlite3.Database(path.resolve(path.join(__dirname, '../db/bdparceria.db')), (error) => {
     if (error) {
         console.log(error.message);
     }

@@ -1,10 +1,12 @@
-const csv = require('csv-parser')
+const csv = require('csv-parser');
+var path = require("path");
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const diffdata = require('../util/diffdata');
 const fs = require('fs');
+
+const diffdata = require('../util/diffdata');
+const inputfile = path.resolve(path.join(__dirname, '../../assets/datas_14nov.csv')); /* precisa ser utf-8 sem BOM */
+const outputfile = path.resolve(path.join(__dirname, '../../assets/datas_14nov - saida.csv'));
 const results = [];
-const inputfile = '../../assets/datas_14nov.csv'; /* precisa ser utf-8 sem BOM */
-const outputfile = '../../assets/datas_14nov - saida.csv';
 
 fs.createReadStream(inputfile)
     .pipe(csv({ separator: ';' }))

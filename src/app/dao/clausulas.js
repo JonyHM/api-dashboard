@@ -1,10 +1,12 @@
 // importar o módulo sqlite3
 // ao definir verbose (detalhado) poderemos rastrear a pilha de execução
 const sqlite3 = require('sqlite3').verbose();
+var path = require("path");
 
 // cria o BD e abre a conexão com ele, e após, dispara a função callback
-const bd = new sqlite3.Database('../db/bdparceria.db', (error) => {
+const bd = new sqlite3.Database(path.resolve(path.join(__dirname, '../db/bdparceria.db')), (error) => {
     if (error) {
+        console.log("Erro ao abrir o banco de dados");        
         console.log(error.message);
     }
 });
